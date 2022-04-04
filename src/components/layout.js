@@ -8,8 +8,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import AppProvider from "../providers/AppProvider"
 
-import Header from "./header"
+import Header from "./Header/Header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,11 +25,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <h1>test</h1>
+      <AppProvider>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
-      </div>
+      </AppProvider>
     </>
   )
 }

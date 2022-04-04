@@ -3,7 +3,7 @@ module.exports = {
     title: `Planets Fact Site`,
     description: ``,
     author: `Mateusz Kuchta`,
-    siteUrl: ``,
+    siteUrl: `http://gatsby.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,8 +36,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Antonio`,
-          `Spartan`,
+          `Antonio\:400,500,700`,
+          `Spartan\:400,700`,
           `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
         ],
         display: "swap",

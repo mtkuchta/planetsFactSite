@@ -5,6 +5,8 @@ export const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+    -webkit-osx-font-smoothing:grayscale;
 }
 html{
     font-size:10px;
@@ -19,6 +21,8 @@ html{
 body{
     font-size:10px;
     box-sizing:border-box;
+    background-color:#070724 ;
+    color:#FFFFFF;
 }
 a,button,input{
 
@@ -27,39 +31,39 @@ a,button,input{
 h1{  
     font-family: "Antonio";
     font-weight: 500;
-    font-size: "80px";
-    line-height: "103px"
+    font-size: 80px;
+    line-height: 103px;
 };
 
 h2 {
       font-family: "Antonio";
       font-weight: 500;
-      font-size: "40px";
-      line-height: "52px";
-      letter-spacing: "-1,5px";
+      font-size: 40px;
+      line-height: 52px;
+      letter-spacing: -1,5px;
 }
 
 h3: {
       font-family: "Spartan";
       font-weight: 700;
-      font-size: "12px";
-      line-height: "25px";
-      letter-spacing: "2.6px";
+      font-size: 12px;
+      line-height: 25px;
+      letter-spacing: 2.6px;
 };
 
 h3: {
       font-family: "Spartan";
-      font-size: "12px";
-      line-height: "25px";
-      letter-spacing: "2.6px";
+      font-size: 12px;
+      line-height: 25px;
+      letter-spacing: 2.6px;
 }
 
 h4: {
       font-family: "Spartan";
       font-weight: 700;
-      font-size: "11px";
-      line-height: "25px";
-      letter-spacing: "1px";
+      font-size: 11px;
+      line-height: 25px;
+      letter-spacing: 1px;
 };
 
 input[type=number]::-webkit-inner-spin-button, 
