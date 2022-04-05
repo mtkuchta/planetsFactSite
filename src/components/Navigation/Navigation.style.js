@@ -13,6 +13,21 @@ export const StyledNav = styled.nav`
   transform: ${({ isOpen }) =>
     isOpen ? `translateY(0)` : `translateY(-100%)`};
   z-index: -1;
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 90%;
+    position: static;
+    transform: translate(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1;
+    opacity: 0.75;
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    width: 665px;
+    flex-grow: 0;
+  }
 `
 
 export const StyledLink = styled(Link)`
@@ -53,5 +68,43 @@ export const StyledLink = styled(Link)`
     height: 8px;
     border-top: 2px solid rgba(255, 255, 255, 0.4);
     border-right: 2px solid rgba(255, 255, 255, 0.4);
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 25px;
+    padding: 0;
+    border-bottom: none;
+    margin-bottom: 10px;
+    transition: 0.4s;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -20px;
+      left: 0;
+      height: 4px;
+      width: 90%;
+      color: red;
+      border-radius: 0;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
   }
 `

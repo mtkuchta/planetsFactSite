@@ -5,8 +5,8 @@ export const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing:border-box;
-    -webkit-font-smoothing: antialiased;
-    -webkit-osx-font-smoothing:grayscale;
+    /* -webkit-font-smoothing: antialiased;
+    -webkit-osx-font-smoothing:grayscale; */
 }
 html{
     font-size:10px;
