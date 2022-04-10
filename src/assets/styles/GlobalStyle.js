@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import backgroundStars from "../images/background-stars.svg"
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -21,7 +22,8 @@ html{
 body{
     font-size:10px;
     box-sizing:border-box;
-    background-color:#070724 ;
+    /* background-color:#070724 ;
+    background-image:url("../images/"); */
     color:#FFFFFF;
 }
 a,button,input{
