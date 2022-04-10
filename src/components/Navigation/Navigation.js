@@ -1,23 +1,30 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { StyledNav, StyledLink } from "./Navigation.style"
 
 const Navigation = ({ isOpen }) => {
-  const planets = [
-    "mercury",
-    "venus",
-    "earth",
-    "mars",
-    "jupiter",
-    "saturn",
-    "uranus",
-    "neptune",
-  ]
+  const data = useStaticQuery(graphql`
+    query PlanetsQuery {
+      allPlanetsJson {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <StyledNav isOpen={isOpen}>
-      {planets.map((planet, index) => {
+      {data.allPlanetsJson.edges.map((planet, index) => {
         return (
-          <StyledLink to={`/${planet}`} color={planet} key={`route_${index}`}>
-            {planet}
+          <StyledLink
+            to={`/${planet.node.name}`}
+            color={planet.node.name}
+            key={`route_${index}`}
+          >
+            {planet.node.name}
           </StyledLink>
         )
       })}
