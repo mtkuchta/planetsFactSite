@@ -10,9 +10,9 @@ export const StyledNav = styled.nav`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  transition: 0.4s;
   transform: ${({ isOpen }) =>
-    isOpen ? `translateY(0)` : `translateY(-100%)`};
-  z-index: -1;
+    isOpen ? `translateX(0)` : `translateX(-100%)`};
 
   ${({ theme }) => theme.mq.tablet} {
     width: 90%;

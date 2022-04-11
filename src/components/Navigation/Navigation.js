@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StyledNav, StyledLink } from "./Navigation.style"
 
@@ -15,13 +15,15 @@ const Navigation = ({ isOpen }) => {
     }
   `)
 
+  console.log(isOpen)
+
   return (
     <StyledNav isOpen={isOpen}>
       {data.allPlanetsJson.edges.map((planet, index) => {
         return (
           <StyledLink
-            to={`/${planet.node.name}`}
-            color={planet.node.name}
+            to={`/${planet.node.name.toLowerCase()}`}
+            color={planet.node.name.toLowerCase()}
             key={`route_${index}`}
           >
             {planet.node.name}
