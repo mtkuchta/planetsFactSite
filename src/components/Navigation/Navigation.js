@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { StyledNav, StyledLink } from "./Navigation.style"
 
@@ -32,6 +33,13 @@ const Navigation = ({ isOpen }) => {
       })}
     </StyledNav>
   )
+}
+Navigation.propTypes = {
+  isOpen: PropTypes.bool,
+}
+
+Navigation.defaultProps = {
+  isOpen: false,
 }
 
 export default Navigation
