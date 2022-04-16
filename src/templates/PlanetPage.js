@@ -1,5 +1,10 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
+import {
+  PlanetContainer,
+  ButtonsContainer,
+  StyledButton,
+} from "./PlanetPage.style"
 
 import Layout from "../components/layout"
 
@@ -28,10 +33,32 @@ export const query = graphql`
 `
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
+  const [active, setActive] = useState("overview")
+  const buttons = ["overview", "structure", "surface"]
+
+  const handleClickButton = e => {
+    setActive(e.target.id)
+  }
 
   return (
     <Layout>
-      <h1>{planet.name}</h1>
+      <PlanetContainer>
+        <ButtonsContainer>
+          {buttons.map(button => {
+            return (
+              <StyledButton
+                key={button}
+                id={button}
+                color={planet.name.toLowerCase()}
+                className={button == active ? "active" : ""}
+                onClick={handleClickButton}
+              >
+                {button}
+              </StyledButton>
+            )
+          })}
+        </ButtonsContainer>
+      </PlanetContainer>
     </Layout>
   )
 }

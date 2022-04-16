@@ -16,8 +16,6 @@ const Navigation = ({ isOpen }) => {
     }
   `)
 
-  console.log(isOpen)
-
   return (
     <StyledNav isOpen={isOpen}>
       {data.allPlanetsJson.edges.map((planet, index) => {

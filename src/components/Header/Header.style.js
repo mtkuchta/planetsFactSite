@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0 24px;
-  background-color: ${({ theme }) => theme.colors.background};
+  /* background-color: ${({ theme }) => theme.colors.background}; */
 
   ${({ theme }) => theme.mq.tablet} {
     height: 160px;
@@ -29,5 +29,6 @@ export const StyledLogo = styled.p`
   font-size: 28px;
   font-weight: 500;
   text-transform: uppercase;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  text-align: center;
 `

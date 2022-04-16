@@ -13,6 +13,8 @@ export const StyledNav = styled.nav`
   transition: 0.4s;
   transform: ${({ isOpen }) =>
     isOpen ? `translateX(0)` : `translateX(-100%)`};
+  background-color: ${({ theme }) => theme.colors.background};
+  z-index: 2;
 
   ${({ theme }) => theme.mq.tablet} {
     width: 90%;
@@ -21,8 +23,9 @@ export const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    z-index: 1;
+    /* z-index: 1; */
     opacity: 0.75;
+    background-color: transparent;
   }
   ${({ theme }) => theme.mq.desktop} {
     width: 665px;
@@ -32,7 +35,7 @@ export const StyledNav = styled.nav`
 
 export const StyledLink = styled(Link)`
   position: relative;
-  width: 80%;
+  width: 90%;
   color: ${({ theme }) => theme.colors.text};
   font-family: "Spartan";
   font-size: 15px;
@@ -41,7 +44,7 @@ export const StyledLink = styled(Link)`
   line-height: 20px;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 20px 0 20px 45px;
+  padding: 20px 20px 20px 45px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   &:before {
@@ -71,6 +74,7 @@ export const StyledLink = styled(Link)`
   }
 
   ${({ theme }) => theme.mq.tablet} {
+    flex-grow: 0;
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -97,7 +101,7 @@ export const StyledLink = styled(Link)`
       top: -20px;
       left: 0;
       height: 4px;
-      width: 90%;
+      width: 100%;
       color: red;
       border-radius: 0;
       opacity: 0;
