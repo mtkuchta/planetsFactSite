@@ -7,9 +7,9 @@ export const PlanetContainer = styled.main`
   grid-template-rows: auto;
   grid-template-areas:
     "buttons"
-    "image"
-    "description"
-    "facts";
+    "planetImage"
+    "planetDescription"
+    "planetFacts";
 `
 
 export const ButtonsContainer = styled.div`

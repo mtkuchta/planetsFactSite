@@ -1,4 +1,7 @@
-exports.createPages = async ({ actions: { createPage }, graphql }) => {
+exports.createPages = async ({
+  actions: { createPage, createRedirect },
+  graphql,
+}) => {
   const data = await graphql(`
     {
       allPlanetsJson {
@@ -22,7 +25,11 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     createPage({
       path: `/${edge.node.name.toLowerCase()}`,
       component: planetTemplate,
-      context: { planet: edge.node.name },
+      context: {
+        planet: edge.node.name,
+      },
     })
   })
+
+  createRedirect({ fromPath: "/", toPath: "/mercury", isPermanent: true })
 }

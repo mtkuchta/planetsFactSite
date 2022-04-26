@@ -7,6 +7,7 @@ import {
 } from "./PlanetPage.style"
 
 import Layout from "../components/layout"
+import PlanetImage from "../components/PlanetImage/PlanetImage"
 
 export const query = graphql`
   query ($planet: String!) {
@@ -27,6 +28,15 @@ export const query = graphql`
           }
           temperature
         }
+      }
+    }
+    images: allFile(filter: { relativeDirectory: { eq: $planet } }) {
+      nodes {
+        childImageSharp {
+          id
+        }
+        publicURL
+        name
       }
     }
   }
@@ -58,6 +68,7 @@ const PlanetPage = ({ data }) => {
             )
           })}
         </ButtonsContainer>
+        <PlanetImage images={data.images} />
       </PlanetContainer>
     </Layout>
   )
