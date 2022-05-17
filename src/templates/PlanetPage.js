@@ -30,19 +30,39 @@ export const query = graphql`
         }
       }
     }
-    images: allFile(filter: { relativeDirectory: { eq: $planet } }) {
-      nodes {
-        childImageSharp {
+    imagesSVG: allFile(
+      filter: { ext: { eq: ".svg" }, relativeDirectory: { eq: $planet } }
+    ) {
+      edges {
+        node {
           id
+          svg {
+            content
+          }
+          name
+          ext
         }
-        publicURL
-        name
+      }
+    }
+    imagesPNG: allFile(
+      filter: { ext: { eq: ".png" }, relativeDirectory: { eq: $planet } }
+    ) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            gatsbyImageData
+          }
+          ext
+        }
       }
     }
   }
 `
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
+  console.log(data.imagesSVG)
   const [active, setActive] = useState("overview")
   const buttons = ["overview", "structure", "surface"]
 
@@ -68,7 +88,7 @@ const PlanetPage = ({ data }) => {
             )
           })}
         </ButtonsContainer>
-        <PlanetImage images={data.images} />
+        {/* <PlanetImage images={data.images} /> */}
       </PlanetContainer>
     </Layout>
   )
