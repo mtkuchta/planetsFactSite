@@ -1,31 +1,15 @@
 import React from "react"
+import { ImageContainer } from "./PlanetImage.style"
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
-const PlanetImage = ({ images }) => {
-  //   const data = useStaticQuery(graphql`
-  //     query PlanetImagesQuery($planet: String!) {
-  //       allFile(filter: { name: { glob: $planet } }) {
-  //         edges {
-  //           node {
-  //             relativePath
-  //             name
-  //             publicURL
-  //             ext
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `)
+const PlanetImage = ({ images, planetName }) => {
+  console.log(images.edges, planetName)
 
-  console.log(images.nodes)
   return (
-    <div>
-      <GatsbyImage
-        image={images.nodes[1].publicURL}
-        alt={images.nodes[1].name}
-      />
-    </div>
+    <ImageContainer
+      planet={planetName.toLowerCase()}
+      dangerouslySetInnerHTML={{ __html: images.edges[1].node.svg.content }}
+    />
   )
 }
 

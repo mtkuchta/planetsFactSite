@@ -20,6 +20,38 @@ export const theme = {
       lineHeight: "25px",
     },
   },
+  sizes: {
+    mobile: {
+      mercury: "111px",
+      venus: "154px",
+      earth: "173px",
+      mars: "129px",
+      jupiter: "224px",
+      saturn: "256px",
+      uranus: "176px",
+      neptune: "173px",
+    },
+    tablet: {
+      mercury: "184px",
+      venus: "253px",
+      earth: "285px",
+      mars: "213px",
+      jupiter: "369px",
+      saturn: "422px",
+      uranus: "290px",
+      neptune: "285px",
+    },
+    desktop: {
+      mercury: "184px",
+      venus: "253px",
+      earth: "285px",
+      mars: "213px",
+      jupiter: "369px",
+      saturn: "422px",
+      uranus: "290px",
+      neptune: "285px",
+    },
+  },
 
   mq: {
     tablet: "@media (min-width: 768px)",

@@ -62,7 +62,7 @@ export const query = graphql`
 `
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
-  console.log(data.imagesSVG)
+  console.log(planet)
   const [active, setActive] = useState("overview")
   const buttons = ["overview", "structure", "surface"]
 
@@ -88,7 +88,7 @@ const PlanetPage = ({ data }) => {
             )
           })}
         </ButtonsContainer>
-        {/* <PlanetImage images={data.images} /> */}
+        <PlanetImage images={data.imagesSVG} planetName={planet.name} />
       </PlanetContainer>
     </Layout>
   )
