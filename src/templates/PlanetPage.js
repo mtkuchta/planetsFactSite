@@ -62,12 +62,10 @@ export const query = graphql`
 `
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
-  console.log(planet)
-  const [active, setActive] = useState("overview")
+  const [activeView, setActiveView] = useState("overview")
   const buttons = ["overview", "structure", "surface"]
-
   const handleClickButton = e => {
-    setActive(e.target.id)
+    setActiveView(e.target.id)
   }
 
   return (
@@ -80,7 +78,7 @@ const PlanetPage = ({ data }) => {
                 key={button}
                 id={button}
                 color={planet.name.toLowerCase()}
-                className={button == active ? "active" : ""}
+                className={button == activeView ? "active" : ""}
                 onClick={handleClickButton}
               >
                 {button}
@@ -88,7 +86,12 @@ const PlanetPage = ({ data }) => {
             )
           })}
         </ButtonsContainer>
-        <PlanetImage images={data.imagesSVG} planetName={planet.name} />
+        <PlanetImage
+          imagesSVG={data.imagesSVG}
+          imagePNG={data.imagesPNG.edges[0]}
+          planetName={planet.name}
+          activeView={activeView}
+        />
       </PlanetContainer>
     </Layout>
   )
