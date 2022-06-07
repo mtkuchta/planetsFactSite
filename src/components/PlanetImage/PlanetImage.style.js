@@ -15,9 +15,10 @@ export const StyledImage = styled.div`
     height: ${({ theme, planet }) => theme.sizes.mobile[planet]};
   }
 `
-export const StyledGatsbyImage = styled(GatsbyImage)`
+export const StyledSurfaceImage = styled.img`
   position: absolute;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, 35%);
   height: 100px;
 `

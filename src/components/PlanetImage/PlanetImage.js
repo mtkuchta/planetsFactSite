@@ -2,13 +2,10 @@ import React from "react"
 import {
   ImageContainer,
   StyledImage,
-  StyledGatsbyImage,
+  StyledSurfaceImage,
 } from "./PlanetImage.style"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PlanetImage = ({ imagesSVG, imagePNG, planetName, activeView }) => {
-  const surfaceImage = getImage(imagePNG.node)
-  console.log(imagePNG)
   return (
     <ImageContainer>
       {activeView == "overview" && (
@@ -27,7 +24,10 @@ const PlanetImage = ({ imagesSVG, imagePNG, planetName, activeView }) => {
           }}
         />
       )}
-      {/* <StyledGatsbyImage image={surfaceImage} /> */}
+
+      {activeView == "surface" && (
+        <StyledSurfaceImage src={imagePNG.node.publicURL} />
+      )}
     </ImageContainer>
   )
 }

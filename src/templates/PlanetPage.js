@@ -51,6 +51,9 @@ export const query = graphql`
         node {
           id
           name
+          relativePath
+          absolutePath
+          publicURL
           childImageSharp {
             gatsbyImageData
           }
