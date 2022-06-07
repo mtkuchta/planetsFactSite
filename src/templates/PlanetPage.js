@@ -8,6 +8,7 @@ import {
 
 import Layout from "../components/layout"
 import PlanetImage from "../components/PlanetImage/PlanetImage"
+import PlanetOverview from "../components/PlanetOverview/PlanetOverview"
 
 export const query = graphql`
   query ($planet: String!) {
@@ -23,6 +24,10 @@ export const query = graphql`
           revolution
           rotation
           structure {
+            content
+            source
+          }
+          surface: geology {
             content
             source
           }
@@ -95,6 +100,7 @@ const PlanetPage = ({ data }) => {
           planetName={planet.name}
           activeView={activeView}
         />
+        <PlanetOverview planet={planet} activeView={activeView} />
       </PlanetContainer>
     </Layout>
   )

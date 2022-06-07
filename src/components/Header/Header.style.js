@@ -24,11 +24,10 @@ export const StyledHeader = styled.header`
     padding: 0 22px;
   }
 `
-export const StyledLogo = styled.p`
+export const StyledLogo = styled.h1`
   font-family: "Antonio";
   font-size: 28px;
   font-weight: 500;
   text-transform: uppercase;
-  /* margin-top: 10px; */
   text-align: center;
 `
