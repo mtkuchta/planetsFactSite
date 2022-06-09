@@ -11,11 +11,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import AppProvider from "../providers/AppProvider"
 import Header from "./Header/Header"
-import backgroundStars from "../assets/images/background-stars.svg"
+// import Backgroundstars from "../assets/images/backgroundstars.svg"
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  background-image: url(${backgroundStars});
+  /* background-image: url(../assets/images/backgroundStars.svg); */
   background-color: #070724;
 `
 

@@ -1,6 +1,8 @@
 import styled from "styled-components"
+import Icon from "../../assets/icon-components/iconsource.svg"
 
 export const OverviewContainer = styled.section`
+  grid-area: planetOverview;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -20,4 +22,27 @@ export const StyledText = styled.p`
   line-height: 22px;
   text-align: center;
   padding: 15px 25px;
+`
+
+export const StyledSource = styled.div`
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  font-family: "Spartan";
+  font-size: 12px;
+  font-weight: 400;
+
+  p {
+    opacity: 0.5;
+    padding-right: 10px;
+  }
+`
+export const StyledLink = styled.a`
+  color: "#FFFFFF";
+  font-weight: 700;
+  text-decoration: underline;
+`
+export const StyledSourceIcon = styled(Icon)`
+  width: 12px;
+  height: 12px;
 `

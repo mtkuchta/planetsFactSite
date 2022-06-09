@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import backgroundStars from "../images/background-stars.svg"
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -29,6 +28,13 @@ body{
 a,button,input{
 
 }
+
+a:-webkit-any-link {
+    color: #FFFFFF;
+
+
+}
+
 
 h1{  
     font-family: "Antonio";

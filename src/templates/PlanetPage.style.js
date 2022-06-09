@@ -8,7 +8,7 @@ export const PlanetContainer = styled.main`
   grid-template-areas:
     "buttons"
     "planetImage"
-    "planetDescription"
+    "planetOverview"
     "planetFacts";
 `
 

@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const ImageContainer = styled.div`
   position: relative;
+  grid-area: planetImage;
   height: 50vh;
 `
 export const StyledImage = styled.div`

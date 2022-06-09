@@ -70,6 +70,7 @@ export const query = graphql`
 `
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
+  console.log(planet)
   const [activeView, setActiveView] = useState("overview")
   const buttons = ["overview", "structure", "surface"]
   const handleClickButton = e => {
