@@ -9,7 +9,7 @@ export const PlanetContainer = styled.main`
     "buttons"
     "planetImage"
     "planetOverview"
-    "planetFacts";
+    "planetDetails";
 `
 
 export const ButtonsContainer = styled.div`

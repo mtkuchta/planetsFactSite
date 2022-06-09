@@ -10,6 +10,7 @@ export const theme = {
     neptune: "#2D68F0",
     text: "#FFFFFF",
     background: "#070724",
+    border: "rgba(255, 255, 255, 0.2)",
     buttonHover: "#D8D8D8",
   },
   fonts: {

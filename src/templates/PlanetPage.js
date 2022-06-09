@@ -9,6 +9,7 @@ import {
 import Layout from "../components/layout"
 import PlanetImage from "../components/PlanetImage/PlanetImage"
 import PlanetOverview from "../components/PlanetOverview/PlanetOverview"
+import PlanetDetails from "../components/PlanetDetails/PlanetDetails"
 
 export const query = graphql`
   query ($planet: String!) {
@@ -70,7 +71,6 @@ export const query = graphql`
 `
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
-  console.log(planet)
   const [activeView, setActiveView] = useState("overview")
   const buttons = ["overview", "structure", "surface"]
   const handleClickButton = e => {
@@ -102,6 +102,7 @@ const PlanetPage = ({ data }) => {
           activeView={activeView}
         />
         <PlanetOverview planet={planet} activeView={activeView} />
+        <PlanetDetails planet={planet} />
       </PlanetContainer>
     </Layout>
   )
