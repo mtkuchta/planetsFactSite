@@ -10,6 +10,18 @@ export const PlanetContainer = styled.main`
     "planetImage"
     "planetOverview"
     "planetDetails";
+  overflow: hidden;
+
+  ${({ theme }) => theme.mq.tablet} {
+    height: calc(100vh - 200px);
+    width: 100%;
+    grid-template-rows: 4fr 2fr 1fr;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "planetImage planetImage"
+      "planetOverview buttons"
+      "planetDetails planetDetails";
+  }
 `
 
 export const ButtonsContainer = styled.div`

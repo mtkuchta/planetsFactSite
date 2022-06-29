@@ -15,6 +15,7 @@ import Header from "./Header/Header"
 
 const Wrapper = styled.div`
   min-height: 100vh;
+  width: 100vw;
   background-image: url(backgroundStars.svg);
   background-color: #070724;
 `
