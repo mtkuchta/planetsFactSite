@@ -5,4 +5,10 @@ export const PlanetDetailsContainer = styled.section`
   width: 100%;
   padding: 20px 15px;
   margin-top: 20px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 40px;
+  }
 `

@@ -26,4 +26,13 @@ export const DetailContainer = styled.div`
     line-height: 48px;
     font-weight: 400;
   }
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 164px;
+    height: 88px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 25px 20px 20px 20px;
+  }
 `

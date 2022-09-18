@@ -7,6 +7,11 @@ export const OverviewContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({ theme }) => theme.mq.tablet} {
+    align-items: flex-start;
+    padding: 0 40px;
+  }
 `
 
 export const StyledPlanetName = styled.h2`
@@ -14,6 +19,11 @@ export const StyledPlanetName = styled.h2`
   font-size: 40px;
   font-weight: 500;
   text-transform: uppercase;
+
+  ${({ theme }) => theme.mq.tablet} {
+    align-items: flex-start;
+    font-size: 48px;
+  }
 `
 export const StyledText = styled.p`
   font-family: "Spartan";
@@ -22,6 +32,11 @@ export const StyledText = styled.p`
   line-height: 22px;
   text-align: center;
   padding: 15px 25px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    text-align: left;
+    padding: 30px 0;
+  }
 `
 
 export const StyledSource = styled.div`
@@ -35,6 +50,10 @@ export const StyledSource = styled.div`
   p {
     opacity: 0.5;
     padding-right: 10px;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    justify-content: left;
   }
 `
 export const StyledLink = styled.a`

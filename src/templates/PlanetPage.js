@@ -73,15 +73,17 @@ const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
   const [activeView, setActiveView] = useState("overview")
   const buttons = ["overview", "structure", "surface"]
+  const isMobileView = window.innerWidth >= 768 ? false : true
+  console.log(isMobileView)
   const handleClickButton = e => {
-    setActiveView(e.target.id)
+    setActiveView(e.currentTarget.id)
   }
 
   return (
     <Layout>
       <PlanetContainer>
         <ButtonsContainer>
-          {buttons.map(button => {
+          {buttons.map((button, index) => {
             return (
               <StyledButton
                 key={button}
@@ -90,7 +92,11 @@ const PlanetPage = ({ data }) => {
                 className={button == activeView ? "active" : ""}
                 onClick={handleClickButton}
               >
-                {button}
+                {/* {isMobileView ? button : `0${index + 1}        ${button}`} */}
+                {!isMobileView && (
+                  <p className="buttonNumber">{`0${index + 1}`}</p>
+                )}
+                <p>{button}</p>
               </StyledButton>
             )
           })}

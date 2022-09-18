@@ -13,6 +13,10 @@ export const StyledImage = styled.div`
     transform: translate(-50%, -50%);
     display: block;
     height: ${({ theme, planet }) => theme.sizes.mobile[planet]};
+
+    ${({ theme }) => theme.mq.tablet} {
+      height: ${({ theme, planet }) => theme.sizes.tablet[planet]};
+    }
   }
 `
 export const StyledSurfaceImage = styled.img`
@@ -21,4 +25,8 @@ export const StyledSurfaceImage = styled.img`
   top: 50%;
   transform: translate(-50%, 35%);
   height: 100px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    height: 130px;
+  }
 `
