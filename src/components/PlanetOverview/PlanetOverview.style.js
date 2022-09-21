@@ -12,6 +12,12 @@ export const OverviewContainer = styled.section`
     align-items: flex-start;
     padding: 0 40px;
   }
+
+  ${({ theme }) => theme.mq.desktop} {
+    width: 350px;
+    justify-content: flex-end;
+    padding: 0 0 40px 0;
+  }
 `
 
 export const StyledPlanetName = styled.h2`

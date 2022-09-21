@@ -11,4 +11,8 @@ export const PlanetDetailsContainer = styled.section`
     justify-content: space-around;
     padding: 0 40px;
   }
+
+  ${({ theme }) => theme.mq.desktop} {
+    padding: 0 100px;
+  }
 `

@@ -35,4 +35,20 @@ export const DetailContainer = styled.div`
     align-items: flex-start;
     padding: 25px 20px 20px 20px;
   }
+  ${({ theme }) => theme.mq.desktop} {
+    width: 255px;
+    height: 128px;
+    margin: 0;
+
+    h3 {
+      font-size: 11px;
+      line-height: 25px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 40px;
+      font-weight: 500;
+    }
+  }
 `

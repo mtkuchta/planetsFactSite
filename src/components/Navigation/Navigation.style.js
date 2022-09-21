@@ -23,7 +23,6 @@ export const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* z-index: 1; */
     opacity: 0.75;
     background-color: transparent;
   }
@@ -35,7 +34,7 @@ export const StyledNav = styled.nav`
 
 export const StyledLink = styled(Link)`
   position: relative;
-  width: 90%;
+  /* width: 90%; */
   color: ${({ theme }) => theme.colors.text};
   font-family: "Spartan";
   font-size: 15px;

@@ -22,6 +22,16 @@ export const PlanetContainer = styled.main`
       "planetOverview buttons"
       "planetDetails planetDetails";
   }
+
+  ${({ theme }) => theme.mq.desktop} {
+    height: calc(100vh - 80px);
+    grid-template-rows: 3fr 2fr 180px;
+    grid-template-columns: 65% 35%;
+    grid-template-areas:
+      "planetImage planetOverview"
+      "planetImage buttons"
+      "planetDetails planetDetails";
+  }
 `
 
 export const ButtonsContainer = styled.div`
@@ -40,6 +50,13 @@ export const ButtonsContainer = styled.div`
     border-bottom: none;
     padding: 45px 0;
   }
+
+  ${({ theme }) => theme.mq.desktop} {
+    width: 350px;
+    height: 176px;
+    justify-content: space-between;
+    padding: 0;
+  }
 `
 export const StyledButton = styled.button`
   position: relative;
@@ -48,6 +65,7 @@ export const StyledButton = styled.button`
   height: 100%;
   font-family: "Spartan";
   font-size: 9px;
+  line-height: 51px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.93px;
@@ -69,6 +87,7 @@ export const StyledButton = styled.button`
     height: 4px;
     background-color: ${({ theme, color }) => theme.colors[color]};
   }
+
   &.active {
     opacity: 1;
   }
@@ -94,6 +113,22 @@ export const StyledButton = styled.button`
     p.buttonNumber {
       padding: 0 10px;
       opacity: 50%;
+    }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    height: 48px;
+    width: 100%;
+    font-size: 12px;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.buttonHover};
+      opacity: 1;
+    }
+    &.active:hover {
+      background-color: ${({ theme, color }) => theme.colors[color]};
     }
   }
 `

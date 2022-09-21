@@ -11,7 +11,7 @@ export const theme = {
     text: "#FFFFFF",
     background: "#070724",
     border: "rgba(255, 255, 255, 0.2)",
-    buttonHover: "#D8D8D8",
+    buttonHover: "rgba(216, 216, 216, 0.2)",
   },
   fonts: {
     body: {
@@ -43,14 +43,14 @@ export const theme = {
       neptune: "285px",
     },
     desktop: {
-      mercury: "184px",
-      venus: "253px",
-      earth: "285px",
-      mars: "213px",
-      jupiter: "369px",
-      saturn: "422px",
-      uranus: "290px",
-      neptune: "285px",
+      mercury: "290px",
+      venus: "400px",
+      earth: "450px",
+      mars: "336px",
+      jupiter: "582px",
+      saturn: "666px",
+      uranus: "458px",
+      neptune: "450px",
     },
   },
 

@@ -10,6 +10,7 @@ import Layout from "../components/layout"
 import PlanetImage from "../components/PlanetImage/PlanetImage"
 import PlanetOverview from "../components/PlanetOverview/PlanetOverview"
 import PlanetDetails from "../components/PlanetDetails/PlanetDetails"
+import { OverviewContainer } from "../components/PlanetOverview/PlanetOverview.style"
 
 export const query = graphql`
   query ($planet: String!) {
@@ -72,9 +73,13 @@ export const query = graphql`
 const PlanetPage = ({ data }) => {
   const planet = data.allPlanetsJson.edges[0].node
   const [activeView, setActiveView] = useState("overview")
-  const buttons = ["overview", "structure", "surface"]
+  const buttons = [
+    { mobileName: "overview", desktopName: "overview" },
+    { mobileName: "structure", desktopName: "internal structure" },
+    { mobileName: "surface", desktopName: "surface geology" },
+  ]
   const isMobileView = window.innerWidth >= 768 ? false : true
-  console.log(isMobileView)
+
   const handleClickButton = e => {
     setActiveView(e.currentTarget.id)
   }
@@ -86,17 +91,16 @@ const PlanetPage = ({ data }) => {
           {buttons.map((button, index) => {
             return (
               <StyledButton
-                key={button}
-                id={button}
+                key={button.mobileName}
+                id={button.mobileName}
                 color={planet.name.toLowerCase()}
-                className={button == activeView ? "active" : ""}
+                className={button.mobileName == activeView ? "active" : ""}
                 onClick={handleClickButton}
               >
-                {/* {isMobileView ? button : `0${index + 1}        ${button}`} */}
                 {!isMobileView && (
                   <p className="buttonNumber">{`0${index + 1}`}</p>
                 )}
-                <p>{button}</p>
+                <p>{isMobileView ? button.mobileName : button.desktopName}</p>
               </StyledButton>
             )
           })}
