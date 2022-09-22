@@ -31,5 +31,11 @@ exports.createPages = async ({
     })
   })
 
-  createRedirect({ fromPath: "/", toPath: "/mercury", isPermanent: true })
+  createRedirect({
+    fromPath: "/",
+    toPath: "/mercury",
+    isPermanent: true,
+    exactPath: true,
+    redirectInBrowser: true,
+  })
 }
