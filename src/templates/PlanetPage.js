@@ -78,7 +78,11 @@ const PlanetPage = ({ data }) => {
     { mobileName: "structure", desktopName: "internal structure" },
     { mobileName: "surface", desktopName: "surface geology" },
   ]
-  const isMobileView = window.innerWidth >= 768 ? false : true
+  let isMobileView = true
+
+  if (typeof window !== "undefined") {
+    isMobileView = window.innerWidth >= 768 ? false : true
+  }
 
   const handleClickButton = e => {
     setActiveView(e.currentTarget.id)
