@@ -16,8 +16,10 @@ import Header from "./Header/Header"
 const Wrapper = styled.div`
   min-height: 100vh;
   width: 100vw;
+  max-width: 100%;
   background-image: url(backgroundStars.svg);
   background-color: #070724;
+  overflow: hidden;
 `
 
 const Layout = ({ children }) => {
