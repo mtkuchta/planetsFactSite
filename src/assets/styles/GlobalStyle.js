@@ -82,6 +82,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #gatsby-focus-wrapper {
   height: 0;
+  display:none;
 }
 
 
