@@ -14,7 +14,7 @@ import Header from "./Header/Header"
 // import Backgroundstars from "../assets/images/backgroundstars.svg"
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh-8px);
   width: 100vw;
   max-width: 100%;
   background-image: url(backgroundStars.svg);

@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 export const StyledNav = styled.nav`
   width: 100%;
+  height: calc(100vh - 68px);
   position: absolute;
   top: 68px;
   left: 0;
@@ -34,7 +35,7 @@ export const StyledNav = styled.nav`
 
 export const StyledLink = styled(Link)`
   position: relative;
-  /* width: 90%; */
+  width: 90%;
   color: ${({ theme }) => theme.colors.text};
   font-family: "Spartan";
   font-size: 15px;
@@ -73,6 +74,7 @@ export const StyledLink = styled(Link)`
   }
 
   ${({ theme }) => theme.mq.tablet} {
+    width: auto;
     flex-grow: 0;
     font-size: 11px;
     font-weight: 400;
