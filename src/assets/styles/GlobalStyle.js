@@ -81,8 +81,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #gatsby-focus-wrapper {
-  height: 0;
-  display:none;
+  background-color: "#070724";
+  color:"#070724"
 }
 
 
