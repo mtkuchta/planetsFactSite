@@ -34,14 +34,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <AppProvider>
-        <Wrapper>
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-          {children}
-        </Wrapper>
-      </AppProvider>
-    </>
+    <AppProvider>
+      <Wrapper>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        {children}
+      </Wrapper>
+    </AppProvider>
   )
 }
 
