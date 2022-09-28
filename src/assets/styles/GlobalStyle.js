@@ -79,11 +79,11 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
-
+/* 
 #gatsby-focus-wrapper {
-  background-color: "#070724";
+  background-color: "red";
   color:"#070724"
-}
+} */
 
 
 `
